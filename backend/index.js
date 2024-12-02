@@ -30,6 +30,10 @@ export const instance = new Razorpay({
 
 //   instance.orders.all().then(console.log).catch(console.error);
 
+app.get('/',(req, res)=>{
+  res.json("it works")
+}) 
+
 mongoose.connect(URL).then(()=>{
     console.log("DB connected");
     app.listen(PORT,()=>{
@@ -42,3 +46,4 @@ app.use("/api",route)
 
 app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
 
+export default app;
