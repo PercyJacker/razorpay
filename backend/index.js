@@ -46,4 +46,4 @@ app.use("/api",route)
 
 app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
 
-export default app;
+
