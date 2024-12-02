@@ -36,14 +36,15 @@ app.get('/',(req, res)=>{
 
 mongoose.connect(URL).then(()=>{
     console.log("DB connected");
-    app.listen(PORT,()=>{
-        console.log(`server is running on ${PORT}`);
-    })
+
 }).catch(err=>console.log(err))
 
 app.use("/api",route)
 
 
 app.get("/api/getkey",(req, res)=>res.status(200).json({key:process.env.API_KEY}))
+
+export default app;
+
 
 
