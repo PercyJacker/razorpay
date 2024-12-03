@@ -201,7 +201,7 @@ export const paymentVerification=async(req,res)=>{
    if(authenticated){
 
   //   //?database will come here
-  return res.redirect(`http://localhost:5173/aboutus`)
+  return res.redirect(`https://peesa-yn31.vercel.app/aboutus`)
 
 }
    else{
