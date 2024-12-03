@@ -5,12 +5,12 @@ const Home = () => {
     const checkoutHandler = async(amount)=>{
         console.log("Amount passed to checkoutHandler:", amount); // Verify amount
 
-        const { data: { key } } = await axios.get(`${import.meta.env.BACKEND_URL}/api/getkey`);
+        const { data: { key } } = await axios.get(`https://peesa-zeta.vercel.app/api/getkey`);
         console.log(key);
         console.log("Backend URL:", BACKEND_URL);
 
         const { data: { order } } = await axios.post(
-            `${import.meta.env.BACKEND_URL}/api/checkout`,
+            `https://peesa-zeta.vercel.app/api/checkout`,
             { amount },
             { headers: { "Content-Type": "application/json" } }
         );
@@ -23,7 +23,7 @@ const Home = () => {
             "description": "Test Transaction",
             "image": "https://example.com/your_logo",
             "order_id": order.id, // This is a sample Order ID
-            "callback_url": `${import.meta.env.BACKEND_URL}/api/paymentVerification`,
+            "callback_url": `https://peesa-zeta.vercel.app/api/paymentVerification`,
             "prefill": {
                 "name": "Gaurav Kumar",
                 "email": "gaurav.kumar@example.com",
