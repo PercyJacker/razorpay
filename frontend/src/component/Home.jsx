@@ -7,7 +7,7 @@ const Home = () => {
 
         const { data: { key } } = await axios.get(`https://peesa-zeta.vercel.app/api/getkey`);
         console.log(key);
-        console.log("Backend URL:", BACKEND_URL);
+
 
         const { data: { order } } = await axios.post(
             `https://peesa-zeta.vercel.app/api/checkout`,
