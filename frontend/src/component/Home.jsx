@@ -7,7 +7,7 @@ const Home = () => {
 
         const { data: { key } } = await axios.get(`${import.meta.env.BACKEND_URL}/api/getkey`);
         console.log(key);
-        console.log("Backend URL:", process.env.BACKEND_URL);
+        console.log("Backend URL:", BACKEND_URL);
 
         const { data: { order } } = await axios.post(
             `${import.meta.env.BACKEND_URL}/api/checkout`,
